@@ -42,7 +42,7 @@ def start(update, context):
     global b
     current_question_index = 0
     count=0
-    context.bot.send_message(chat_id=update.message.chat_id, text="""HELLO!!👋\nWELCOME TO THE MYSTERIOUS ESCAPE ROOM\nYOUR TARGET IS SIMPLE🎯\nSOLVE THE LEVELS, GET THE CLUES AND CATCH THE REAL KILLER\nSO,LET'S GET STARTED...\nNOTE:\n1)Answer atleast any two questions correctly to proceed to the next level.\n2)⚠️Answers can be in single word or in sentence form.\n3)Ignore the passage if you have answered only one question correctly.""")
+    context.bot.send_message(chat_id=update.message.chat_id, text="""HELLO!!👋\nYOUR TARGET IS SIMPLE🎯\nSOLVE THE LEVELS, GET THE CLUES AND CATCH THE REAL KILLER\nSO,LET'S GET STARTED...\nNOTE:\n1)Answer atleast any two questions correctly to proceed to the next level.\n2)⚠️Answers can be in single word or in sentence form.\n3)Ignore the text message displayed if you have answered only one question correctly.""")
     l=list(b.items())
     random.shuffle(l)
     b=dict(l)
@@ -70,9 +70,9 @@ def message(update, context):
           # Check if we have reached the end of the questions
           if current_question_index == 3:
             if count==2 or count==3:
-                context.bot.send_message(chat_id=update.message.chat_id, text="YOU HAVE ANSWERED QUESTIONS CORRECTLY.WELL DONE!!. Mr.Samuel a reputed bussinessman has been murdered and the police have narrowed down the suspects to three people RANI the victim's  wife JOSE the victim's friend and bussiness partner and finally the gardener ARUN.The police have investigated them seperately and their statements have been recorded.These statements will play over the speakers as you solve the puzzles.Listen very carefully because one of them is lying.FIND OUT WHO IS THAT and ESCAPE the Room..GOOD LUCK!!!")
+                context.bot.send_message(chat_id=update.message.chat_id, text="YOU HAVE ANSWERED TWO OR MORE THAN TWO QUESTIONS CORRECTLY.WELL DONE!!")
             elif count==1 or count==0:
-                context.bot.send_message(chat_id=update.message.chat_id, text="YOU HAVE ANSWERED TWO QUESTIONS INCORRECTLY.BETTER LUCK NEXT TIME...")
+                context.bot.send_message(chat_id=update.message.chat_id, text="OUT OF THREE YOU HAVE ANSWERED TWO QUESTIONS INCORRECTLY.BETTER LUCK NEXT TIME...")
           else:
              # Ask the next question
              next_question = list(b.keys())[current_question_index]
@@ -84,9 +84,9 @@ def message(update, context):
 
             if current_question_index == 3:
               if count==2 or count==3:
-                context.bot.send_message(chat_id=update.message.chat_id, text="YOU HAVE ANSWERED QUESTIONS CORRECTLY.WELL DONE!!. Mr.Samuel a reputed bussinessman has been murdered and the police have narrowed down the suspects to three people RANI the victim's  wife JOSE the victim's friend and bussiness partner and finally the gardener ARUN.The police have investigated them seperately and their statements have been recorded.These statements will play over the speakers as you solve the puzzles.Listen very carefully because one of them is lying.FIND OUT WHO IS THAT and ESCAPE the Room..GOOD LUCK!!!")
+                context.bot.send_message(chat_id=update.message.chat_id, text="YOU HAVE ANSWERED TWO OR MORE THAN TWO QUESTIONS CORRECTLY.WELL DONE!!")
               elif count==1 or count==0:
-                context.bot.send_message(chat_id=update.message.chat_id, text="YOU HAVE ANSWERED TWO QUESTIONS INCORRECTLY.BETTER LUCK NEXT TIME...")
+                context.bot.send_message(chat_id=update.message.chat_id, text="OUT OF THREE YOU HAVE ANSWERED TWO QUESTIONS INCORRECTLY.BETTER LUCK NEXT TIME...")
             else: 
                next_question = list(b.keys())[current_question_index]
                context.bot.send_message(chat_id=update.message.chat_id, text=next_question)
