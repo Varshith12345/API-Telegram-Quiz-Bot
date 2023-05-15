@@ -3,7 +3,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import random
 
 # Define your Telegram bot token and Rasa endpoint URL as environment variables
-TELEGRAM_TOKEN = os.environ.get('6073146259:AAGrHCkuoQYF0ZtUuwUJ7aYMI27HYAI65vw')
+TELEGRAM_TOKEN = os.environ.get('TYPE OR PASTE YOUR TELEGRAM BOT API TOKEN HERE')
 
 # Define the questions and answers
 QUESTIONS = {
